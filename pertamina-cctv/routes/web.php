@@ -19,7 +19,7 @@ Route::get('/dashboard', function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
     Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
-        Route::inertia('/dashboard', 'Dashboard', [])->name('dashboard');
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
         Route::get('/export/cctvs', [\App\Http\Controllers\Admin\ExportController::class, 'cctvs'])->name('export.cctvs');
     });
 });
