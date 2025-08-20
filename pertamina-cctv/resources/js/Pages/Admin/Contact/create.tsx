@@ -1,6 +1,8 @@
 import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, useForm, Link } from '@inertiajs/react';
+import { Field, Actions } from '@/Components/Admin/Form';
+import { Button } from '@/Components/Admin/Button';
 
 type FormData = { name: string; email?: string; phone?: string; whatsapp?: string; address?: string };
 
@@ -11,22 +13,18 @@ export default function AdminContactCreate() {
     <AdminLayout>
       <Head title="Create Contact" />
       <form onSubmit={submit} className="max-w-lg space-y-3">
-        {['name','email','phone','whatsapp'].map((f)=> (
-          <div key={f}>
-            <label className="block text-sm capitalize">{f}</label>
+        {(['name','email','phone','whatsapp'] as const).map((f)=> (
+          <Field key={f} label={f.toUpperCase()} error={(errors as any)[f]}>
             <input className="w-full rounded border px-3 py-2" value={(data as any)[f] || ''} onChange={e=>setData(f as any, e.target.value)} />
-            {(errors as any)[f] && <div className="text-xs text-rose-600">{(errors as any)[f]}</div>}
-          </div>
+          </Field>
         ))}
-        <div>
-          <label className="block text-sm">Address</label>
+        <Field label="Address" error={errors.address}>
           <textarea className="w-full rounded border px-3 py-2" value={data.address || ''} onChange={e=>setData('address', e.target.value)} />
-          {errors.address && <div className="text-xs text-rose-600">{errors.address}</div>}
-        </div>
-        <div className="pt-2 flex gap-2">
-          <Link href={route('admin.contact.index')} className="rounded border px-4 py-2">Cancel</Link>
-          <button disabled={processing} className="rounded bg-indigo-600 text-white px-4 py-2">Save</button>
-        </div>
+        </Field>
+        <Actions>
+          <Link href={route('admin.contact.index')}><Button variant="secondary">Cancel</Button></Link>
+          <Button disabled={processing}>Save</Button>
+        </Actions>
       </form>
     </AdminLayout>
   );
