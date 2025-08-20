@@ -12,25 +12,24 @@ export default function AdminLayout({ children }: PropsWithChildren) {
         <nav className="flex flex-col gap-1 text-sm">
           <Link href={route('admin.dashboard')} className="rounded px-3 py-2 hover:bg-gray-100">Dashboard</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Table</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">User</Link>
+          <Link href={route('admin.table.index')} className="rounded px-3 py-2 hover:bg-gray-100">CCTV List</Link>
+          <Link href={route('admin.table.create')} className="rounded px-3 py-2 hover:bg-gray-100">Create CCTV</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">User</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">User List</Link>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Create User</Link>
+          <Link href={route('admin.users.index')} className="rounded px-3 py-2 hover:bg-gray-100">User List</Link>
+          <Link href={route('admin.users.create')} className="rounded px-3 py-2 hover:bg-gray-100">Create User</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Maps</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Maps List</Link>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Create Maps</Link>
+          <Link href={route('admin.maps.index')} className="rounded px-3 py-2 hover:bg-gray-100">Maps List</Link>
+          <Link href={route('admin.maps.create')} className="rounded px-3 py-2 hover:bg-gray-100">Create Maps</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Location</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Location List</Link>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Create Location</Link>
+          <Link href={route('admin.location.index')} className="rounded px-3 py-2 hover:bg-gray-100">Location List</Link>
+          <Link href={route('admin.location.create')} className="rounded px-3 py-2 hover:bg-gray-100">Create Location</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Contact</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Contact List</Link>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Create Contact</Link>
+          <Link href={route('admin.contact.index')} className="rounded px-3 py-2 hover:bg-gray-100">Contact List</Link>
+          <Link href={route('admin.contact.create')} className="rounded px-3 py-2 hover:bg-gray-100">Create Contact</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Notification</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Notification</Link>
+          <Link href={route('admin.notification.index')} className="rounded px-3 py-2 hover:bg-gray-100">Notification</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Message</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Message</Link>
-          <div className="mt-2 text-[10px] uppercase text-gray-400">Theme</div>
-          <Link href="#" className="rounded px-3 py-2 hover:bg-gray-100">Theme</Link>
+          <Link href={route('admin.message.index')} className="rounded px-3 py-2 hover:bg-gray-100">Message</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Profile</div>
           <Link href={route('profile.edit')} className="rounded px-3 py-2 hover:bg-gray-100">Settings</Link>
         </nav>

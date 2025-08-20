@@ -9,7 +9,7 @@ export default function AdminContactIndex({ contacts, filters }: any) {
       <div className="flex items-center justify-between mb-4">
         <input
           className="rounded border px-3 py-2"
-          defaultValue={filters.q}
+          defaultValue={filters?.q || ''}
           placeholder="Cari kontak..."
           onKeyDown={(e) => { if (e.key === 'Enter') router.visit(route('admin.contact.index', { q: (e.target as HTMLInputElement).value })); }}
         />
