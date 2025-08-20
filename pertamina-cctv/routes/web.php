@@ -27,6 +27,38 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/users/{user}/edit', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('users.edit');
         Route::put('/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'update'])->name('users.update');
         Route::delete('/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('users.destroy');
+
+        // Maps (Buildings)
+        Route::get('/maps', [\App\Http\Controllers\Admin\BuildingController::class, 'index'])->name('maps.index');
+        Route::get('/maps/create', [\App\Http\Controllers\Admin\BuildingController::class, 'create'])->name('maps.create');
+        Route::post('/maps', [\App\Http\Controllers\Admin\BuildingController::class, 'store'])->name('maps.store');
+        Route::get('/maps/{building}/edit', [\App\Http\Controllers\Admin\BuildingController::class, 'edit'])->name('maps.edit');
+        Route::put('/maps/{building}', [\App\Http\Controllers\Admin\BuildingController::class, 'update'])->name('maps.update');
+        Route::delete('/maps/{building}', [\App\Http\Controllers\Admin\BuildingController::class, 'destroy'])->name('maps.destroy');
+
+        // Location (Rooms)
+        Route::get('/location', [\App\Http\Controllers\Admin\RoomController::class, 'index'])->name('location.index');
+        Route::get('/location/create', [\App\Http\Controllers\Admin\RoomController::class, 'create'])->name('location.create');
+        Route::post('/location', [\App\Http\Controllers\Admin\RoomController::class, 'store'])->name('location.store');
+        Route::get('/location/{room}/edit', [\App\Http\Controllers\Admin\RoomController::class, 'edit'])->name('location.edit');
+        Route::put('/location/{room}', [\App\Http\Controllers\Admin\RoomController::class, 'update'])->name('location.update');
+        Route::delete('/location/{room}', [\App\Http\Controllers\Admin\RoomController::class, 'destroy'])->name('location.destroy');
+
+        // Table (CCTVs)
+        Route::get('/table', [\App\Http\Controllers\Admin\CctvController::class, 'index'])->name('table.index');
+        Route::get('/table/create', [\App\Http\Controllers\Admin\CctvController::class, 'create'])->name('table.create');
+        Route::post('/table', [\App\Http\Controllers\Admin\CctvController::class, 'store'])->name('table.store');
+        Route::get('/table/{cctv}/edit', [\App\Http\Controllers\Admin\CctvController::class, 'edit'])->name('table.edit');
+        Route::put('/table/{cctv}', [\App\Http\Controllers\Admin\CctvController::class, 'update'])->name('table.update');
+        Route::delete('/table/{cctv}', [\App\Http\Controllers\Admin\CctvController::class, 'destroy'])->name('table.destroy');
+
+        // Contact
+        Route::get('/contact', [\App\Http\Controllers\Admin\ContactController::class, 'index'])->name('contact.index');
+        Route::get('/contact/create', [\App\Http\Controllers\Admin\ContactController::class, 'create'])->name('contact.create');
+        Route::post('/contact', [\App\Http\Controllers\Admin\ContactController::class, 'store'])->name('contact.store');
+        Route::get('/contact/{contact}/edit', [\App\Http\Controllers\Admin\ContactController::class, 'edit'])->name('contact.edit');
+        Route::put('/contact/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'update'])->name('contact.update');
+        Route::delete('/contact/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'destroy'])->name('contact.destroy');
     });
 });
 
@@ -36,6 +68,10 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['auth', 'verified', 'role:user|admin'])->group(function () {
         Route::inertia('/dashboard', 'Dashboard', [])->name('dashboard');
         Route::inertia('/maps', 'User/Maps/index', [])->name('maps');
+        Route::get('/location', [\App\Http\Controllers\User\LocationController::class, 'index'])->name('location.index');
+        Route::get('/location/{building}', [\App\Http\Controllers\User\LocationController::class, 'rooms'])->name('location.rooms');
+        Route::get('/room/{room}', [\App\Http\Controllers\User\LocationController::class, 'cctvs'])->name('room.cctvs');
+        Route::get('/contact', [\App\Http\Controllers\User\ContactController::class, 'index'])->name('contact');
     });
 });
 
