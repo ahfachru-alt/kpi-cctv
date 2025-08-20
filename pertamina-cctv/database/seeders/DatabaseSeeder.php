@@ -37,5 +37,8 @@ class DatabaseSeeder extends Seeder
             ]);
             $user->assignRole('user');
         }
+
+        // Seed locations and CCTV dataset
+        $this->call(LocationSeeder::class);
     }
 }

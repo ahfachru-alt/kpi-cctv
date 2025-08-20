@@ -28,6 +28,7 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
     Route::middleware(['auth', 'verified', 'role:user|admin'])->group(function () {
         Route::inertia('/dashboard', 'Dashboard', [])->name('dashboard');
+        Route::inertia('/maps', 'User/Maps/index', [])->name('maps');
     });
 });
 
@@ -59,4 +60,10 @@ Route::get('/auth/google/callback', function () {
     }
     Auth::login($user);
     return redirect()->intended(route('user.dashboard', absolute: false));
+});
+
+// Protected API for maps
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/api/buildings', [\App\Http\Controllers\Api\MapController::class, 'buildings']);
+    Route::get('/api/cctvs', [\App\Http\Controllers\Api\MapController::class, 'cctvs']);
 });
