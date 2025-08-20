@@ -20,7 +20,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
     Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/export/cctvs', [\App\Http\Controllers\Admin\ExportController::class, 'cctvs'])->name('export.cctvs');
+        Route::prefix('export')->name('export.')->group(function () {
+            Route::get('/cctvs', [\App\Http\Controllers\Admin\ExportController::class, 'cctvs'])->name('cctvs');
+            Route::get('/users', [\App\Http\Controllers\Admin\ExportController::class, 'users'])->name('users');
+            Route::get('/buildings', [\App\Http\Controllers\Admin\ExportController::class, 'buildings'])->name('buildings');
+            Route::get('/rooms', [\App\Http\Controllers\Admin\ExportController::class, 'rooms'])->name('rooms');
+            Route::get('/contacts', [\App\Http\Controllers\Admin\ExportController::class, 'contacts'])->name('contacts');
+        });
         Route::get('/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
         Route::get('/users/create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('users.create');
         Route::post('/users', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('users.store');
