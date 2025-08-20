@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { Link, usePage } from '@inertiajs/react';
+import ThemeSwitch from '@/Components/ThemeSwitch';
 
 export default function AdminLayout({ children }: PropsWithChildren) {
   return (
@@ -30,6 +31,8 @@ export default function AdminLayout({ children }: PropsWithChildren) {
           <Link href={route('admin.notification.index')} className="rounded px-3 py-2 hover:bg-gray-100">Notification</Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Message</div>
           <Link href={route('admin.message.index')} className="rounded px-3 py-2 hover:bg-gray-100">Message</Link>
+          <div className="mt-2 text-[10px] uppercase text-gray-400">Theme</div>
+          <ThemeSwitch />
           <div className="mt-2 text-[10px] uppercase text-gray-400">Profile</div>
           <Link href={route('profile.edit')} className="rounded px-3 py-2 hover:bg-gray-100">Settings</Link>
         </nav>

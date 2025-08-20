@@ -22,6 +22,8 @@ function makeCircleIcon(color: string) {
   });
 }
 
+import UserLayout from '@/Layouts/UserLayout';
+
 export default function UserMaps() {
   const [buildings, setBuildings] = useState<Building[]>([]);
   const [cctvs, setCctvs] = useState<Cctv[]>([]);
@@ -49,46 +51,48 @@ export default function UserMaps() {
   }, [filter]);
 
   return (
-    <div className="p-4 space-y-3">
-      <Head title="Maps" />
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-gray-600">Filter:</span>
-        {(['online','offline','maintenance'] as const).map(s => (
-          <label key={s} className="inline-flex items-center gap-1 text-sm">
-            <input type="checkbox" checked={filter[s]} onChange={(e) => setFilter({ ...filter, [s]: e.target.checked })} />
-            <span className="inline-block size-3 rounded-full" style={{ background: statusColors[s] }} />
-            <span className="capitalize">{s}</span>
-          </label>
-        ))}
-      </div>
-
-      <div className="h-[70vh] w-full overflow-hidden rounded-lg ring-1 ring-gray-200">
-        <MapContainer center={center} zoom={14} className="h-full w-full">
-          <LayersControl position="topright">
-            <LayersControl.BaseLayer checked name="OpenStreetMap">
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; OpenStreetMap contributors" />
-            </LayersControl.BaseLayer>
-            <LayersControl.BaseLayer name="Satellite (ESRI)">
-              <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" attribution="Tiles &copy; Esri" />
-            </LayersControl.BaseLayer>
-          </LayersControl>
-
-          {cctvs.map(cam => (
-            cam.latitude && cam.longitude ? (
-              <Marker key={cam.id} position={[cam.latitude, cam.longitude]} icon={makeCircleIcon(statusColors[cam.status])}>
-                <Popup>
-                  <div className="space-y-1">
-                    <div className="font-semibold">{cam.name}</div>
-                    <div className="text-xs">Status: <span className="capitalize">{cam.status}</span></div>
-                    <a href={`/cctv/${cam.id}/live`} className="inline-flex items-center text-indigo-600 hover:underline text-sm">Live</a>
-                  </div>
-                </Popup>
-              </Marker>
-            ) : null
+    <UserLayout>
+      <div className="p-1 space-y-3">
+        <Head title="Maps" />
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-gray-600">Filter:</span>
+          {(['online','offline','maintenance'] as const).map(s => (
+            <label key={s} className="inline-flex items-center gap-1 text-sm">
+              <input type="checkbox" checked={filter[s]} onChange={(e) => setFilter({ ...filter, [s]: e.target.checked })} />
+              <span className="inline-block size-3 rounded-full" style={{ background: statusColors[s] }} />
+              <span className="capitalize">{s}</span>
+            </label>
           ))}
-        </MapContainer>
+        </div>
+
+        <div className="h-[70vh] w-full overflow-hidden rounded-lg ring-1 ring-gray-200">
+          <MapContainer center={center} zoom={14} className="h-full w-full">
+            <LayersControl position="topright">
+              <LayersControl.BaseLayer checked name="OpenStreetMap">
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; OpenStreetMap contributors" />
+              </LayersControl.BaseLayer>
+              <LayersControl.BaseLayer name="Satellite (ESRI)">
+                <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" attribution="Tiles &copy; Esri" />
+              </LayersControl.BaseLayer>
+            </LayersControl>
+
+            {cctvs.map(cam => (
+              cam.latitude && cam.longitude ? (
+                <Marker key={cam.id} position={[cam.latitude, cam.longitude]} icon={makeCircleIcon(statusColors[cam.status])}>
+                  <Popup>
+                    <div className="space-y-1">
+                      <div className="font-semibold">{cam.name}</div>
+                      <div className="text-xs">Status: <span className="capitalize">{cam.status}</span></div>
+                      <a href={`/cctv/${cam.id}/live`} className="inline-flex items-center text-indigo-600 hover:underline text-sm">Live</a>
+                    </div>
+                  </Popup>
+                </Marker>
+              ) : null
+            ))}
+          </MapContainer>
+        </div>
       </div>
-    </div>
+    </UserLayout>
   );
 }
 

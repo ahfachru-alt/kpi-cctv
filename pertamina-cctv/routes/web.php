@@ -71,7 +71,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::prefix('user')->name('user.')->group(function () {
     Route::get('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
     Route::middleware(['auth', 'verified', 'role:user|admin'])->group(function () {
-        Route::inertia('/dashboard', 'Dashboard', [])->name('dashboard');
+        Route::inertia('/dashboard', 'User/Dashboard/index', [])->name('dashboard');
         Route::inertia('/maps', 'User/Maps/index', [])->name('maps');
         Route::get('/location', [\App\Http\Controllers\User\LocationController::class, 'index'])->name('location.index');
         Route::get('/location/{building}', [\App\Http\Controllers\User\LocationController::class, 'rooms'])->name('location.rooms');
