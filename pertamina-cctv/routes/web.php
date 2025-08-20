@@ -59,6 +59,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/contact/{contact}/edit', [\App\Http\Controllers\Admin\ContactController::class, 'edit'])->name('contact.edit');
         Route::put('/contact/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'update'])->name('contact.update');
         Route::delete('/contact/{contact}', [\App\Http\Controllers\Admin\ContactController::class, 'destroy'])->name('contact.destroy');
+
+        // Messages / Notifications
+        Route::get('/messages', [\App\Http\Controllers\MessageController::class, 'index'])->name('message.index');
+        Route::post('/messages', [\App\Http\Controllers\MessageController::class, 'store'])->name('message.store');
+        Route::get('/notifications', fn() => Inertia::render('Admin/Notification/index')) ->name('notification.index');
     });
 });
 
