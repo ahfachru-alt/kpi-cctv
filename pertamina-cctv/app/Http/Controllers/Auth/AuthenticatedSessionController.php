@@ -34,6 +34,9 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $user = $request->user();
+        if ($user) {
+            $user->forceFill(['last_login_at' => now()])->save();
+        }
         if ($user && $user->hasRole('admin')) {
             return redirect()->intended(route('admin.dashboard', absolute: false));
         }

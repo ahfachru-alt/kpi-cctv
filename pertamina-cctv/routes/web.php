@@ -20,6 +20,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
     Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
         Route::inertia('/dashboard', 'Dashboard', [])->name('dashboard');
+        Route::get('/export/cctvs', [\App\Http\Controllers\Admin\ExportController::class, 'cctvs'])->name('export.cctvs');
     });
 });
 
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/cctv/{id}/live', [\App\Http\Controllers\CctvController::class, 'live'])->name('cctv.live');
 });
 
 require __DIR__.'/auth.php';
