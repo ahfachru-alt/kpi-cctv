@@ -106,12 +106,12 @@ export default function Register() {
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 gap-3">
-                    <Link href={route('auth.google.redirect') as string}>
+                    <a href={route('auth.google.redirect') as string}>
                         <Button variant="danger" className="w-full justify-center gap-2">
                             <GoogleIcon className="h-5 w-5" />
                             Lanjutkan dengan Gmail
                         </Button>
-                    </Link>
+                    </a>
                 </div>
                 <div className="mt-4 flex items-center justify-end">
                     <Link
