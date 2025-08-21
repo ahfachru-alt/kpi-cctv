@@ -94,7 +94,7 @@ export default function Login({
 
                 <div className="mt-6 grid grid-cols-1 gap-3">
                     <a href={route('auth.google.redirect') as string} className="block">
-                        <DangerButton className="w-full justify-center gap-2 normal-case">
+                        <DangerButton className="w-full justify-center gap-2">
                             <GoogleIcon className="h-5 w-5" />
                             Lanjutkan dengan Gmail
                         </DangerButton>

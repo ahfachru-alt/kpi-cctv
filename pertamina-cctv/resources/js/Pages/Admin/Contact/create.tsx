@@ -1,7 +1,8 @@
 import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, useForm, Link } from '@inertiajs/react';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
+import SecondaryButton from '@/Components/SecondaryButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 
@@ -40,8 +41,8 @@ export default function AdminContactCreate() {
           {errors.address && <div className="text-xs text-rose-600 mt-1">{errors.address}</div>}
         </div>
         <div className="pt-2 flex gap-2">
-          <Link href={route('admin.contact.index')}><Button variant="secondary">Cancel</Button></Link>
-          <Button disabled={processing}>Save</Button>
+          <Link href={route('admin.contact.index')}><SecondaryButton>Cancel</SecondaryButton></Link>
+          <PrimaryButton disabled={processing}>Save</PrimaryButton>
         </div>
       </form>
     </AdminLayout>
