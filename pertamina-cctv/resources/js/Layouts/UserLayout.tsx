@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { Link } from '@inertiajs/react';
 import ThemeSwitch from '@/Components/ThemeSwitch';
+import Flash from '@/Components/Flash';
 
 export default function UserLayout({ children }: PropsWithChildren) {
   return (
@@ -21,7 +22,10 @@ export default function UserLayout({ children }: PropsWithChildren) {
           <Link href={route('profile.edit')} className="rounded px-3 py-2 hover:bg-gray-100">Settings</Link>
         </nav>
       </aside>
-      <main className="ml-56 p-6">{children}</main>
+      <main className="ml-56 p-6">
+        <Flash />
+        {children}
+      </main>
     </div>
   );
 }
