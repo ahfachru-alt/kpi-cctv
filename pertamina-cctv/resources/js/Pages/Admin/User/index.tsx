@@ -18,17 +18,19 @@ export default function AdminUserIndex({ users, stats, filters }: any) {
         <Link href={route('admin.users.create')}><Button>Create User</Button></Link>
       </div>
       <div className="mb-3">
-        <input
-          type="text"
-          defaultValue={filters.q}
-          placeholder="Cari nama/email..."
-          className="w-full max-w-sm rounded border px-3 py-2"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              router.visit(route('admin.users.index', { q: (e.target as HTMLInputElement).value }));
-            }
-          }}
-        />
+        <div className="relative w-full max-w-sm">
+          <input
+            type="text"
+            defaultValue={filters.q}
+            placeholder="Cari nama/email..."
+            className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                router.visit(route('admin.users.index', { q: (e.target as HTMLInputElement).value }));
+              }
+            }}
+          />
+        </div>
       </div>
       <Table columns={["ID","Name","Email","Role","Action"]}>
         {users.data.map((u: any) => (

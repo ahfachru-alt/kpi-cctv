@@ -31,9 +31,12 @@ export default function AdminMessageIndex({ messages }: any) {
       </form>
       <div className="space-y-2">
         {items.map((m: any) => (
-          <div key={m.id} className="rounded border p-3">
-            <div className="text-xs text-gray-500">{m.created_at}</div>
-            <div>{m.content}</div>
+          <div key={m.id} className="rounded-lg bg-white p-3 ring-1 ring-gray-200">
+            <div className="mb-1 flex items-center justify-between text-xs text-gray-500">
+              <span>{m.created_at}</span>
+              {m.user?.name && <span className="font-medium text-gray-600">{m.user.name}</span>}
+            </div>
+            <div className="text-sm text-gray-800">{m.content}</div>
           </div>
         ))}
       </div>
