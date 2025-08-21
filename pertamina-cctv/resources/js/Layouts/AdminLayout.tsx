@@ -14,30 +14,30 @@ export default function AdminLayout({ children }: PropsWithChildren) {
           <div className="text-xs text-gray-500">PLATFORM</div>
         </div>
         <nav className="flex flex-col gap-1 text-sm">
-          <Link href={route('admin.dashboard')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><DashboardIcon className="h-4 w-4" /> <span>Dashboard</span></Link>
+          <Link href={route('admin.dashboard')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><DashboardIcon className="h-5 w-5" /> <span>Dashboard</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Table</div>
-          <Link href={route('admin.table.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><TableIcon className="h-4 w-4" /> <span>CCTV List</span></Link>
-          <Link href={route('admin.table.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><TableIcon className="h-4 w-4" /> <span>Create CCTV</span></Link>
+          <Link href={route('admin.table.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><TableIcon className="h-5 w-5" /> <span>CCTV List</span></Link>
+          <Link href={route('admin.table.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><TableIcon className="h-5 w-5" /> <span>Create CCTV</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">User</div>
-          <Link href={route('admin.users.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><UsersIcon className="h-4 w-4" /> <span>User List</span></Link>
-          <Link href={route('admin.users.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><UsersIcon className="h-4 w-4" /> <span>Create User</span></Link>
+          <Link href={route('admin.users.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><UsersIcon className="h-5 w-5" /> <span>User List</span></Link>
+          <Link href={route('admin.users.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><UsersIcon className="h-5 w-5" /> <span>Create User</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Maps</div>
-          <Link href={route('admin.maps.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><MapIcon className="h-4 w-4" /> <span>Maps List</span></Link>
-          <Link href={route('admin.maps.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><MapIcon className="h-4 w-4" /> <span>Create Maps</span></Link>
+          <Link href={route('admin.maps.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><MapIcon className="h-5 w-5" /> <span>Maps List</span></Link>
+          <Link href={route('admin.maps.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><MapIcon className="h-5 w-5" /> <span>Create Maps</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Location</div>
-          <Link href={route('admin.location.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><LocationIcon className="h-4 w-4" /> <span>Location List</span></Link>
-          <Link href={route('admin.location.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><LocationIcon className="h-4 w-4" /> <span>Create Location</span></Link>
+          <Link href={route('admin.location.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><LocationIcon className="h-5 w-5" /> <span>Location List</span></Link>
+          <Link href={route('admin.location.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><LocationIcon className="h-5 w-5" /> <span>Create Location</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Contact</div>
-          <Link href={route('admin.contact.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><ContactIcon className="h-4 w-4" /> <span>Contact List</span></Link>
-          <Link href={route('admin.contact.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><ContactIcon className="h-4 w-4" /> <span>Create Contact</span></Link>
+          <Link href={route('admin.contact.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><ContactIcon className="h-5 w-5" /> <span>Contact List</span></Link>
+          <Link href={route('admin.contact.create')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><ContactIcon className="h-5 w-5" /> <span>Create Contact</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Notification</div>
-          <Link href={route('admin.notification.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><BellIcon className="h-4 w-4" /> <span>Notification</span></Link>
+          <Link href={route('admin.notification.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><BellIcon className="h-5 w-5" /> <span>Notification</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Message</div>
-          <Link href={route('admin.message.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><ChatIcon className="h-4 w-4" /> <span>Message</span></Link>
+          <Link href={route('admin.message.index')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><ChatIcon className="h-5 w-5" /> <span>Message</span></Link>
           <div className="mt-2 text-[10px] uppercase text-gray-400">Theme</div>
           <ThemeSwitch />
           <div className="mt-2 text-[10px] uppercase text-gray-400">Profile</div>
-          <Link href={route('profile.edit')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><UserIcon className="h-4 w-4" /> <span>Settings</span></Link>
+          <Link href={route('profile.edit')} className="flex items-center gap-2 rounded px-3 py-2 hover:bg-gray-100"><UserIcon className="h-5 w-5" /> <span>Settings</span></Link>
         </nav>
       </aside>
       <main className="ml-64 p-6">

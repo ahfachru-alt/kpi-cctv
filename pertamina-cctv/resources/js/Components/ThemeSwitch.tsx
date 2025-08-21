@@ -17,9 +17,9 @@ export default function ThemeSwitch() {
   }, [theme]);
 
   const items: { key: Theme; label: string; icon: React.ReactNode }[] = [
-    { key: 'light', label: 'Light', icon: <SunIcon className="h-4 w-4" /> },
-    { key: 'dark', label: 'Dark', icon: <MoonIcon className="h-4 w-4" /> },
-    { key: 'system', label: 'System', icon: <SystemIcon className="h-4 w-4" /> },
+    { key: 'light', label: 'Light', icon: <SunIcon className="h-5 w-5" /> },
+    { key: 'dark', label: 'Dark', icon: <MoonIcon className="h-5 w-5" /> },
+    { key: 'system', label: 'System', icon: <SystemIcon className="h-5 w-5" /> },
   ];
 
   return (
