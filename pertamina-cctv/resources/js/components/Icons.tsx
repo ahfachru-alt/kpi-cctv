@@ -32,3 +32,70 @@ export const SystemIcon: React.FC<IconProps> = ({ className = '' }) => (
   </svg>
 );
 
+// Navigation icons to mimic Laravel Starter Kit minimal style
+export const DashboardIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <rect x="3" y="3" width="7" height="7" strokeWidth="2" />
+    <rect x="14" y="3" width="7" height="7" strokeWidth="2" />
+    <rect x="14" y="14" width="7" height="7" strokeWidth="2" />
+    <rect x="3" y="14" width="7" height="7" strokeWidth="2" />
+  </svg>
+);
+
+export const TableIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="16" rx="2" strokeWidth="2" />
+    <path strokeWidth="2" d="M3 10h18M9 4v16M15 4v16" />
+  </svg>
+);
+
+export const UsersIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path strokeWidth="2" d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" strokeWidth="2" />
+    <path strokeWidth="2" d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path strokeWidth="2" d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
+
+export const MapIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path strokeWidth="2" d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3z" />
+    <path strokeWidth="2" d="M9 3v15M15 6v15" />
+  </svg>
+);
+
+export const LocationIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path strokeWidth="2" d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z" />
+    <circle cx="12" cy="11" r="2" strokeWidth="2" />
+  </svg>
+);
+
+export const ContactIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2" strokeWidth="2" />
+    <path strokeWidth="2" d="M3 7l9 6 9-6" />
+  </svg>
+);
+
+export const BellIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path strokeWidth="2" d="M18 8a6 6 0 10-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+    <path strokeWidth="2" d="M13.73 21a2 2 0 0 1-3.46 0" />
+  </svg>
+);
+
+export const ChatIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path strokeWidth="2" d="M21 15a4 4 0 0 1-4 4H7l-4 4V5a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+  </svg>
+);
+
+export const UserIcon: React.FC<IconProps> = ({ className = '' }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <circle cx="12" cy="7" r="4" strokeWidth="2" />
+    <path strokeWidth="2" d="M5.5 21a7.5 7.5 0 0 1 13 0" />
+  </svg>
+);
+
