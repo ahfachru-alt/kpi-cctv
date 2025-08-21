@@ -1,6 +1,7 @@
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
+import { Button } from '@/Components/Admin/Button';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
@@ -105,10 +106,12 @@ export default function Register() {
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 gap-3">
-                    <a href={route('auth.google.redirect') as string} className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-red-600 px-4 py-2 font-semibold text-white shadow hover:bg-red-700">
-                        <GoogleIcon className="h-5 w-5" />
-                        Lanjutkan dengan Gmail
-                    </a>
+                    <Link href={route('auth.google.redirect') as string}>
+                        <Button variant="danger" className="w-full justify-center gap-2">
+                            <GoogleIcon className="h-5 w-5" />
+                            Lanjutkan dengan Gmail
+                        </Button>
+                    </Link>
                 </div>
                 <div className="mt-4 flex items-center justify-end">
                     <Link

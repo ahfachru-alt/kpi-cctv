@@ -21,7 +21,7 @@ export default function Guest({ children }: PropsWithChildren) {
                 </div>
                 <div className="mt-8 w-full px-6 sm:max-w-md">
                     <footer className="rounded-2xl bg-white/10 px-4 py-3 text-center text-[11px] text-white/70 ring-1 ring-white/10 backdrop-blur dark:bg-gray-900/30 dark:text-white/60">
-                        Copy Right Kilang Pertamina Internasional
+                        © Kilang Pertamina Internasional
                     </footer>
                 </div>
             </div>
