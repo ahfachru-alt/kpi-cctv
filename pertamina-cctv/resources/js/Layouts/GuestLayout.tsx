@@ -19,6 +19,11 @@ export default function Guest({ children }: PropsWithChildren) {
                 <div className="mt-6 w-full overflow-hidden bg-white/95 px-6 py-4 shadow-2xl backdrop-blur sm:max-w-md sm:rounded-2xl dark:bg-gray-900/80">
                     {children}
                 </div>
+                <div className="mt-8 w-full px-6 sm:max-w-md">
+                    <footer className="rounded-2xl bg-white/10 px-4 py-3 text-center text-[11px] text-white/70 ring-1 ring-white/10 backdrop-blur dark:bg-gray-900/30 dark:text-white/60">
+                        Copy Right Kilang Pertamina Internasional
+                    </footer>
+                </div>
             </div>
         </div>
     );

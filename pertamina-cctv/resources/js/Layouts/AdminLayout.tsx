@@ -43,6 +43,9 @@ export default function AdminLayout({ children }: PropsWithChildren) {
         <Container>
           <Flash />
           {children}
+          <footer className="mt-8 border-t border-gray-200 pt-4 text-center text-xs text-gray-500">
+            Copy Right Kilang Pertamina Internasional
+          </footer>
         </Container>
       </main>
     </div>
