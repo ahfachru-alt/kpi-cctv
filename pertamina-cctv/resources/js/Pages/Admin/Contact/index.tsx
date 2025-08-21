@@ -2,7 +2,8 @@ import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import { Table } from '@/Components/Admin/Table';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
+import SecondaryButton from '@/Components/SecondaryButton';
 
 export default function AdminContactIndex({ contacts, filters }: any) {
 	return (
@@ -15,7 +16,7 @@ export default function AdminContactIndex({ contacts, filters }: any) {
 					placeholder="Cari kontak..."
 					onKeyDown={(e) => { if (e.key === 'Enter') router.visit(route('admin.contact.index', { q: (e.target as HTMLInputElement).value })); }}
 				/>
-				<Link href={route('admin.contact.create')}><Button>Create Contact</Button></Link>
+				<Link href={route('admin.contact.create')}><PrimaryButton>Create Contact</PrimaryButton></Link>
 			</div>
 			<Table columns={["ID","Name","Email","Phone","WhatsApp","Action"]}>
 				{contacts.data.map((c: any) => (
@@ -26,8 +27,8 @@ export default function AdminContactIndex({ contacts, filters }: any) {
 						<td className="px-3 py-2">{c.phone}</td>
 						<td className="px-3 py-2">{c.whatsapp}</td>
 						<td className="px-3 py-2 text-right">
-							<Link href={route('admin.contact.edit', c.id)} className="mr-2"><Button variant="secondary">Edit</Button></Link>
-							<Link as="button" method="delete" href={route('admin.contact.destroy', c.id)}><Button variant="danger">Delete</Button></Link>
+							<Link href={route('admin.contact.edit', c.id)} className="mr-2"><SecondaryButton>Edit</SecondaryButton></Link>
+							<Link as="button" method="delete" href={route('admin.contact.destroy', c.id)}><SecondaryButton>Delete</SecondaryButton></Link>
 						</td>
 					</tr>
 				))}

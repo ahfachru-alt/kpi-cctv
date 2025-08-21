@@ -2,7 +2,8 @@ import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import { Table } from '@/Components/Admin/Table';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
+import SecondaryButton from '@/Components/SecondaryButton';
 
 export default function AdminMapsIndex({ buildings, filters }: any) {
   return (
@@ -15,7 +16,7 @@ export default function AdminMapsIndex({ buildings, filters }: any) {
           placeholder="Cari gedung..."
           onKeyDown={(e) => { if (e.key === 'Enter') router.visit(route('admin.maps.index', { q: (e.target as HTMLInputElement).value })); }}
         />
-        <Link href={route('admin.maps.create')}><Button>Create Maps</Button></Link>
+        <Link href={route('admin.maps.create')}><PrimaryButton>Create Maps</PrimaryButton></Link>
       </div>
       <Table columns={["ID","Name","Lat","Lng","Action"]}>
         {buildings.data.map((b: any) => (
@@ -25,8 +26,8 @@ export default function AdminMapsIndex({ buildings, filters }: any) {
             <td className="px-3 py-2">{b.latitude}</td>
             <td className="px-3 py-2">{b.longitude}</td>
             <td className="px-3 py-2 text-right">
-              <Link href={route('admin.maps.edit', b.id)} className="mr-2"><Button variant="secondary">Edit</Button></Link>
-              <Link as="button" method="delete" href={route('admin.maps.destroy', b.id)}><Button variant="danger">Delete</Button></Link>
+              <Link href={route('admin.maps.edit', b.id)} className="mr-2"><SecondaryButton>Edit</SecondaryButton></Link>
+              <Link as="button" method="delete" href={route('admin.maps.destroy', b.id)}><SecondaryButton>Delete</SecondaryButton></Link>
             </td>
           </tr>
         ))}

@@ -2,7 +2,8 @@ import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, Link } from '@inertiajs/react';
 import { Card } from '@/Components/Admin/Card';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
+import SecondaryButton from '@/Components/SecondaryButton';
 
 type Stats = { usersOnline: number; usersOffline: number; buildings: number; rooms: number; cctvOnline: number; cctvOffline: number; cctvMaintenance: number };
 
@@ -29,11 +30,11 @@ export default function AdminDashboard({ stats }: { stats: Stats }) {
         ))}
       </div>
       <div className="mt-6 flex flex-wrap gap-2">
-        <Link href={route('admin.export.cctvs')}><Button variant="primary">Export CCTV</Button></Link>
-        <Link href={route('admin.export.users')}><Button variant="secondary">Export Users</Button></Link>
-        <Link href={route('admin.export.buildings')}><Button variant="secondary">Export Buildings</Button></Link>
-        <Link href={route('admin.export.rooms')}><Button variant="secondary">Export Rooms</Button></Link>
-        <Link href={route('admin.export.contacts')}><Button variant="secondary">Export Contacts</Button></Link>
+        <Link href={route('admin.export.cctvs')}><PrimaryButton>Export CCTV</PrimaryButton></Link>
+        <Link href={route('admin.export.users')}><SecondaryButton>Export Users</SecondaryButton></Link>
+        <Link href={route('admin.export.buildings')}><SecondaryButton>Export Buildings</SecondaryButton></Link>
+        <Link href={route('admin.export.rooms')}><SecondaryButton>Export Rooms</SecondaryButton></Link>
+        <Link href={route('admin.export.contacts')}><SecondaryButton>Export Contacts</SecondaryButton></Link>
       </div>
     </AdminLayout>
   );

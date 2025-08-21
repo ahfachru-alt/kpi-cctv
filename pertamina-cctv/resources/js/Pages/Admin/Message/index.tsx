@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, useForm } from '@inertiajs/react';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
 
 declare global { interface Window { Echo?: any } }
 
@@ -27,7 +27,7 @@ export default function AdminMessageIndex({ messages }: any) {
       <Head title="Messages" />
       <form onSubmit={submit} className="mb-3 flex gap-2">
         <input className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" placeholder="Tulis pesan..." value={data.content} onChange={e=>setData('content', e.target.value)} />
-        <Button disabled={processing}>Kirim</Button>
+        <PrimaryButton disabled={processing}>Kirim</PrimaryButton>
       </form>
       <div className="space-y-2">
         {items.map((m: any) => (

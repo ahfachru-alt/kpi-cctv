@@ -2,7 +2,8 @@ import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, Link, useForm, router } from '@inertiajs/react';
 import { Card } from '@/Components/Admin/Card';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
+import SecondaryButton from '@/Components/SecondaryButton';
 import { Table } from '@/Components/Admin/Table';
 
 export default function AdminUserIndex({ users, stats, filters }: any) {
@@ -15,7 +16,7 @@ export default function AdminUserIndex({ users, stats, filters }: any) {
           <span className="rounded bg-emerald-100 text-emerald-700 px-3 py-1">Online: {stats.online}</span>
           <span className="rounded bg-rose-100 text-rose-700 px-3 py-1">Offline: {stats.offline}</span>
         </Card>
-        <Link href={route('admin.users.create')}><Button>Create User</Button></Link>
+        <Link href={route('admin.users.create')}><PrimaryButton>Create User</PrimaryButton></Link>
       </div>
       <div className="mb-3">
         <div className="relative w-full max-w-sm">
@@ -40,8 +41,8 @@ export default function AdminUserIndex({ users, stats, filters }: any) {
             <td className="px-3 py-2">{u.email}</td>
             <td className="px-3 py-2 capitalize">{u.role}</td>
             <td className="px-3 py-2 text-right">
-              <Link href={route('admin.users.edit', u.id)} className="mr-2"><Button variant="secondary">Edit</Button></Link>
-              <Button variant="danger" onClick={() => destroy(route('admin.users.destroy', u.id))}>Delete</Button>
+              <Link href={route('admin.users.edit', u.id)} className="mr-2"><SecondaryButton>Edit</SecondaryButton></Link>
+              <SecondaryButton onClick={() => destroy(route('admin.users.destroy', u.id))}>Delete</SecondaryButton>
             </td>
           </tr>
         ))}

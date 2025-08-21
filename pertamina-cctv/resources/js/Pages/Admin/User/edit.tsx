@@ -3,7 +3,8 @@ import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, useForm, Link } from '@inertiajs/react';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
+import SecondaryButton from '@/Components/SecondaryButton';
 
 type FormData = { name: string; email: string; password?: string; role: 'admin'|'user' };
 
@@ -38,8 +39,8 @@ export default function AdminUserEdit({ user }: any) {
           {errors.role && <div className="text-xs text-rose-600 mt-1">{errors.role}</div>}
         </div>
         <div className="pt-2 flex gap-2">
-          <Link href={route('admin.users.index')}><Button variant="secondary">Cancel</Button></Link>
-          <Button disabled={processing}>Update</Button>
+          <Link href={route('admin.users.index')}><SecondaryButton>Cancel</SecondaryButton></Link>
+          <PrimaryButton disabled={processing}>Update</PrimaryButton>
         </div>
       </form>
     </AdminLayout>

@@ -3,7 +3,8 @@ import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, useForm, Link } from '@inertiajs/react';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
-import { Button } from '@/Components/Admin/Button';
+import PrimaryButton from '@/Components/PrimaryButton';
+import SecondaryButton from '@/Components/SecondaryButton';
 
 type FormData = { building_id: number|string; name: string };
 
@@ -28,8 +29,8 @@ export default function AdminLocationCreate({ buildings }: any) {
           {errors.name && <div className="text-xs text-rose-600 mt-1">{errors.name}</div>}
         </div>
         <div className="pt-2 flex gap-2">
-          <Link href={route('admin.location.index')}><Button variant="secondary">Cancel</Button></Link>
-          <Button disabled={processing}>Save</Button>
+          <Link href={route('admin.location.index')}><SecondaryButton>Cancel</SecondaryButton></Link>
+          <PrimaryButton disabled={processing}>Save</PrimaryButton>
         </div>
       </form>
     </AdminLayout>
