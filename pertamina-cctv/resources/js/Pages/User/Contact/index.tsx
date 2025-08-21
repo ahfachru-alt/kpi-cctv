@@ -5,8 +5,8 @@ import UserLayout from '@/Layouts/UserLayout';
 export default function UserContactIndex({ contacts }: any) {
   return (
     <UserLayout>
-      <div className="p-1 space-y-3">
-        <Head title="Contact" />
+      <Head title="Contact" />
+      <div className="space-y-3">
         <div className="text-lg font-semibold">Contact</div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {contacts.map((c: any)=> (

@@ -5,8 +5,8 @@ import UserLayout from '@/Layouts/UserLayout';
 export default function UserLocationIndex({ buildings }: any) {
   return (
     <UserLayout>
-      <div className="p-1 space-y-3">
-        <Head title="Location" />
+      <Head title="Location" />
+      <div className="space-y-3">
         <div className="text-lg font-semibold">Gedung</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {buildings.map((b: any)=> (

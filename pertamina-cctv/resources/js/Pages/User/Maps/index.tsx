@@ -52,8 +52,8 @@ export default function UserMaps() {
 
   return (
     <UserLayout>
-      <div className="p-1 space-y-3">
-        <Head title="Maps" />
+      <Head title="Maps" />
+      <div className="space-y-3">
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-600">Filter:</span>
           {(['online','offline','maintenance'] as const).map(s => (

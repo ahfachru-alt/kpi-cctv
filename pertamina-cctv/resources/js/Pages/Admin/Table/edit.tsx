@@ -3,7 +3,6 @@ import AdminLayout from '@/Layouts/AdminLayout';
 import { Head, useForm, Link } from '@inertiajs/react';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
-import PrimaryButton from '@/Components/PrimaryButton';
 import { Button } from '@/Components/Admin/Button';
 
 type FormData = { name: string; ip: string; status: 'online'|'offline'|'maintenance'; building_id: number|string; room_id?: number|string; latitude?: number; longitude?: number };

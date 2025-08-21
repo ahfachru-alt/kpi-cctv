@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
 import { Head } from '@inertiajs/react';
+import UserLayout from '@/Layouts/UserLayout';
 
 type Props = { cctv: { id: number; name: string; status: string; hls: string|null } };
 
@@ -20,20 +21,22 @@ export default function CctvShow({ cctv }: Props) {
   }, [cctv.hls]);
 
   return (
-    <div className="p-4 space-y-3">
+    <UserLayout>
       <Head title={`Live - ${cctv.name}`} />
-      <div className="text-lg font-semibold">{cctv.name}</div>
-      <div className="text-sm text-gray-600">Status: <span className="capitalize">{cctv.status}</span></div>
-      <div className="aspect-video w-full overflow-hidden rounded-lg ring-1 ring-gray-200">
-        {cctv.hls ? (
-          <video ref={videoRef} className="h-full w-full bg-black" controls autoPlay muted playsInline />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center text-gray-500">
-            Menyiapkan stream...
-          </div>
-        )}
+      <div className="space-y-3">
+        <div className="text-lg font-semibold">{cctv.name}</div>
+        <div className="text-sm text-gray-600">Status: <span className="capitalize">{cctv.status}</span></div>
+        <div className="aspect-video w-full overflow-hidden rounded-lg ring-1 ring-gray-200">
+          {cctv.hls ? (
+            <video ref={videoRef} className="h-full w-full bg-black" controls autoPlay muted playsInline />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center text-gray-500">
+              Menyiapkan stream...
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </UserLayout>
   );
 }
 
