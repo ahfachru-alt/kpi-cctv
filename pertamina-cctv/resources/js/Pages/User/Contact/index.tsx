@@ -10,7 +10,7 @@ export default function UserContactIndex({ contacts }: any) {
         <div className="text-lg font-semibold">Contact</div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {contacts.map((c: any)=> (
-            <div key={c.id} className="rounded-lg border p-4 space-y-1">
+            <div key={c.id} className="rounded-xl bg-white p-4 ring-1 ring-gray-200 shadow-sm space-y-1">
               <div className="font-semibold">{c.name}</div>
               {c.email && <a className="text-indigo-600 hover:underline" href={`mailto:${c.email}`}>{c.email}</a>}
               {c.phone && <a className="text-indigo-600 hover:underline" href={`tel:${c.phone}`}>{c.phone}</a>}
