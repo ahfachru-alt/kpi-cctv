@@ -14,7 +14,7 @@ export default function UserCctvIndex({ room, cctvs }: any) {
             <div key={c.id} className="rounded-xl bg-white p-4 ring-1 ring-gray-200 shadow-sm">
               <div className="font-semibold">{c.name}</div>
               <div className="text-xs capitalize">Status: {c.status}</div>
-              <Link href={route('cctv.live', c.id)}><PrimaryButton className="mt-2 px-3 py-1">Live</PrimaryButton></Link>
+              <Link href={route('cctv.live', c.id)}><PrimaryButton>Live</PrimaryButton></Link>
             </div>
           ))}
         </div>

@@ -85,7 +85,7 @@ export default function UserMaps() {
                       <div className="font-semibold">{cam.name}</div>
                       <div className="text-xs">Status: <span className="capitalize">{cam.status}</span></div>
                       <div className="mt-1">
-                        <a href={`/cctv/${cam.id}/live`}><PrimaryButton className="px-2 py-1 text-[10px]">Live</PrimaryButton></a>
+                        <a href={`/cctv/${cam.id}/live`}><PrimaryButton>Live</PrimaryButton></a>
                       </div>
                     </div>
                   </Popup>
