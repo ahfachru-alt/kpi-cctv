@@ -16,7 +16,7 @@ export default function AdminLocationCreate({ buildings }: any) {
       <form onSubmit={submit} className="max-w-lg space-y-4">
         <div>
           <InputLabel htmlFor="building_id" value="Building" />
-          <select id="building_id" className="mt-1 block w-full rounded border px-3 py-2" value={data.building_id} onChange={e=>setData('building_id', e.target.value)}>
+          <select id="building_id" className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" value={data.building_id} onChange={e=>setData('building_id', e.target.value)}>
             <option value="">Pilih gedung</option>
             {buildings.map((b: any)=> <option key={b.id} value={b.id}>{b.name}</option>)}
           </select>

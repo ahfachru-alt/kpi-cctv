@@ -26,7 +26,7 @@ export default function AdminMessageIndex({ messages }: any) {
     <AdminLayout>
       <Head title="Messages" />
       <form onSubmit={submit} className="mb-3 flex gap-2">
-        <input className="flex-1 rounded border px-3 py-2" placeholder="Tulis pesan..." value={data.content} onChange={e=>setData('content', e.target.value)} />
+        <input className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" placeholder="Tulis pesan..." value={data.content} onChange={e=>setData('content', e.target.value)} />
         <Button disabled={processing}>Kirim</Button>
       </form>
       <div className="space-y-2">

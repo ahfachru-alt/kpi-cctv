@@ -10,7 +10,7 @@ export default function AdminMapsIndex({ buildings, filters }: any) {
       <Head title="Maps List" />
       <div className="flex items-center justify-between mb-4">
         <input
-          className="rounded border px-3 py-2"
+          className="rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
           defaultValue={filters.q}
           placeholder="Cari gedung..."
           onKeyDown={(e) => { if (e.key === 'Enter') router.visit(route('admin.maps.index', { q: (e.target as HTMLInputElement).value })); }}

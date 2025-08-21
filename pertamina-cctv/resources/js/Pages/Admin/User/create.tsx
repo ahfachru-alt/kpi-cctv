@@ -31,7 +31,7 @@ export default function AdminUserCreate() {
         </div>
         <div>
           <InputLabel htmlFor="role" value="Role" />
-          <select id="role" className="mt-1 block w-full rounded border px-3 py-2" value={data.role} onChange={e=>setData('role', e.target.value as any)}>
+          <select id="role" className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" value={data.role} onChange={e=>setData('role', e.target.value as any)}>
             <option value="user">user</option>
             <option value="admin">admin</option>
           </select>

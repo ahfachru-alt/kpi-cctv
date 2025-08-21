@@ -9,7 +9,7 @@ export default function AdminCctvIndex({ cctvs, buildings, filters }: any) {
     <AdminLayout>
       <Head title="CCTV Table" />
       <div className="flex items-center justify-between mb-4">
-        <select className="rounded border px-3 py-2" defaultValue={filters.building_id || ''} onChange={(e)=>router.visit(route('admin.table.index', { building_id: e.target.value }))}>
+        <select className="rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" defaultValue={filters.building_id || ''} onChange={(e)=>router.visit(route('admin.table.index', { building_id: e.target.value }))}>
           <option value="">Semua Gedung</option>
           {buildings.map((b: any)=> <option key={b.id} value={b.id}>{b.name}</option>)}
         </select>
