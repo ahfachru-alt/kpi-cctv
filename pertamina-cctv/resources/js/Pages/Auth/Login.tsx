@@ -2,7 +2,7 @@ import Checkbox from '@/Components/Checkbox';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
-import { Button } from '@/Components/Admin/Button';
+import DangerButton from '@/Components/DangerButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
@@ -93,11 +93,11 @@ export default function Login({
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 gap-3">
-                    <a href={route('auth.google.redirect') as string}>
-                        <Button variant="danger" className="w-full justify-center gap-2">
+                    <a href={route('auth.google.redirect') as string} className="block">
+                        <DangerButton className="w-full justify-center gap-2 normal-case">
                             <GoogleIcon className="h-5 w-5" />
                             Lanjutkan dengan Gmail
-                        </Button>
+                        </DangerButton>
                     </a>
                 </div>
                 <div className="mt-4 flex items-center justify-end">
