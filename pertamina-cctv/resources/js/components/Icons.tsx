@@ -13,89 +13,89 @@ export const GoogleIcon: React.FC<IconProps> = ({ className = '' }) => (
 );
 
 export const SunIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <circle cx="12" cy="12" r="4" strokeWidth="2" />
-    <path strokeWidth="2" d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.07 6.07-1.41-1.41M8.34 8.34 6.93 6.93m10.14-1.41-1.41 1.41M8.34 15.66l-1.41 1.41" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.07 6.07-1.41-1.41M8.34 8.34 6.93 6.93m10.14-1.41-1.41 1.41M8.34 15.66l-1.41 1.41" />
   </svg>
 );
 
 export const MoonIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeWidth="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
   </svg>
 );
 
 export const SystemIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <rect x="3" y="4" width="18" height="12" rx="2" ry="2" strokeWidth="2" />
-    <path strokeWidth="2" d="M8 20h8" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="12" rx="2" ry="2" />
+    <path d="M8 20h8" />
   </svg>
 );
 
 // Navigation icons to mimic Laravel Starter Kit minimal style
 export const DashboardIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <rect x="3" y="3" width="7" height="7" strokeWidth="2" />
-    <rect x="14" y="3" width="7" height="7" strokeWidth="2" />
-    <rect x="14" y="14" width="7" height="7" strokeWidth="2" />
-    <rect x="3" y="14" width="7" height="7" strokeWidth="2" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="7" height="7" />
+    <rect x="14" y="3" width="7" height="7" />
+    <rect x="14" y="14" width="7" height="7" />
+    <rect x="3" y="14" width="7" height="7" />
   </svg>
 );
 
 export const TableIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <rect x="3" y="4" width="18" height="16" rx="2" strokeWidth="2" />
-    <path strokeWidth="2" d="M3 10h18M9 4v16M15 4v16" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="16" rx="2" />
+    <path d="M3 10h18M9 4v16M15 4v16" />
   </svg>
 );
 
 export const UsersIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeWidth="2" d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
-    <circle cx="9" cy="7" r="4" strokeWidth="2" />
-    <path strokeWidth="2" d="M23 21v-2a4 4 0 0 0-3-3.87" />
-    <path strokeWidth="2" d="M16 3.13a4 4 0 0 1 0 7.75" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
   </svg>
 );
 
 export const MapIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeWidth="2" d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3z" />
-    <path strokeWidth="2" d="M9 3v15M15 6v15" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3z" />
+    <path d="M9 3v15M15 6v15" />
   </svg>
 );
 
 export const LocationIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeWidth="2" d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z" />
-    <circle cx="12" cy="11" r="2" strokeWidth="2" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z" />
+    <circle cx="12" cy="11" r="2" />
   </svg>
 );
 
 export const ContactIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <rect x="3" y="5" width="18" height="14" rx="2" strokeWidth="2" />
-    <path strokeWidth="2" d="M3 7l9 6 9-6" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="M3 7l9 6 9-6" />
   </svg>
 );
 
 export const BellIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeWidth="2" d="M18 8a6 6 0 10-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
-    <path strokeWidth="2" d="M13.73 21a2 2 0 0 1-3.46 0" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M18 8a6 6 0 10-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
   </svg>
 );
 
 export const ChatIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeWidth="2" d="M21 15a4 4 0 0 1-4 4H7l-4 4V5a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V5a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
   </svg>
 );
 
 export const UserIcon: React.FC<IconProps> = ({ className = '' }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <circle cx="12" cy="7" r="4" strokeWidth="2" />
-    <path strokeWidth="2" d="M5.5 21a7.5 7.5 0 0 1 13 0" />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <circle cx="12" cy="7" r="4" />
+    <path d="M5.5 21a7.5 7.5 0 0 1 13 0" />
   </svg>
 );
 
