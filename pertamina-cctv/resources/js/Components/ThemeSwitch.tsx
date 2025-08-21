@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { MoonIcon, SunIcon, SystemIcon } from '@/components/Icons';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -15,15 +16,23 @@ export default function ThemeSwitch() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  const items: { key: Theme; label: string; icon: React.ReactNode }[] = [
+    { key: 'light', label: 'Light', icon: <SunIcon className="h-5 w-5" /> },
+    { key: 'dark', label: 'Dark', icon: <MoonIcon className="h-5 w-5" /> },
+    { key: 'system', label: 'System', icon: <SystemIcon className="h-5 w-5" /> },
+  ];
+
   return (
     <div className="mt-2 grid grid-cols-3 gap-1 rounded-lg bg-gray-50 p-1 ring-1 ring-gray-200">
-      {(['light','dark','system'] as Theme[]).map((t) => (
+      {items.map(({ key, label, icon }) => (
         <button
-          key={t}
-          onClick={() => setTheme(t)}
-          className={`rounded px-2 py-1 text-xs capitalize ${theme === t ? 'bg-white ring-1 ring-gray-300' : 'hover:bg-white/60'}`}
+          key={key}
+          onClick={() => setTheme(key)}
+          className={`flex items-center justify-center gap-1 rounded px-2 py-1 text-xs ${theme === key ? 'bg-white ring-1 ring-gray-300' : 'hover:bg-white/60'}`}
+          aria-label={label}
         >
-          {t}
+          {icon}
+          <span>{label}</span>
         </button>
       ))}
     </div>
