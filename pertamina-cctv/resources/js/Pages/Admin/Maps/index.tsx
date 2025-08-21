@@ -4,6 +4,7 @@ import { Head, Link, router } from '@inertiajs/react';
 import { Table } from '@/Components/Admin/Table';
 import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
+import DangerButton from '@/Components/DangerButton';
 
 export default function AdminMapsIndex({ buildings, filters }: any) {
   return (
@@ -27,7 +28,7 @@ export default function AdminMapsIndex({ buildings, filters }: any) {
             <td className="px-3 py-2">{b.longitude}</td>
             <td className="px-3 py-2 text-right">
               <Link href={route('admin.maps.edit', b.id)} className="mr-2"><SecondaryButton>Edit</SecondaryButton></Link>
-              <Link as="button" method="delete" href={route('admin.maps.destroy', b.id)}><SecondaryButton>Delete</SecondaryButton></Link>
+              <Link as="button" method="delete" href={route('admin.maps.destroy', b.id)}><DangerButton>Delete</DangerButton></Link>
             </td>
           </tr>
         ))}

@@ -4,6 +4,7 @@ import { Head, Link, router } from '@inertiajs/react';
 import { Table } from '@/Components/Admin/Table';
 import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
+import DangerButton from '@/Components/DangerButton';
 
 export default function AdminLocationIndex({ rooms, buildings, filters }: any) {
   return (
@@ -24,7 +25,7 @@ export default function AdminLocationIndex({ rooms, buildings, filters }: any) {
             <td className="px-3 py-2">{r.name}</td>
             <td className="px-3 py-2 text-right">
               <Link href={route('admin.location.edit', r.id)} className="mr-2"><SecondaryButton>Edit</SecondaryButton></Link>
-              <Link as="button" method="delete" href={route('admin.location.destroy', r.id)}><SecondaryButton>Delete</SecondaryButton></Link>
+              <Link as="button" method="delete" href={route('admin.location.destroy', r.id)}><DangerButton>Delete</DangerButton></Link>
             </td>
           </tr>
         ))}
