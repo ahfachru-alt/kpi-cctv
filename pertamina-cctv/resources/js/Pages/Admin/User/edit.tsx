@@ -4,6 +4,7 @@ import { Head, useForm, Link } from '@inertiajs/react';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import PrimaryButton from '@/Components/PrimaryButton';
+import { Button } from '@/Components/Admin/Button';
 
 type FormData = { name: string; email: string; password?: string; role: 'admin'|'user' };
 
@@ -38,8 +39,8 @@ export default function AdminUserEdit({ user }: any) {
           {errors.role && <div className="text-xs text-rose-600 mt-1">{errors.role}</div>}
         </div>
         <div className="pt-2 flex gap-2">
-          <Link href={route('admin.users.index')} className="rounded border px-4 py-2">Cancel</Link>
-          <PrimaryButton disabled={processing}>Update</PrimaryButton>
+          <Link href={route('admin.users.index')}><Button variant="secondary">Cancel</Button></Link>
+          <Button disabled={processing}>Update</Button>
         </div>
       </form>
     </AdminLayout>

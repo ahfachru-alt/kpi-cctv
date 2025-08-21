@@ -13,7 +13,7 @@ export default function AdminLocationIndex({ rooms, buildings, filters }: any) {
           <option value="">Semua Gedung</option>
           {buildings.map((b: any)=> <option key={b.id} value={b.id}>{b.name}</option>)}
         </select>
-        <Link href={route('admin.location.create')} className="rounded bg-indigo-600 text-white px-3 py-2">Create Location</Link>
+        <Link href={route('admin.location.create')}><Button>Create Location</Button></Link>
       </div>
       <Table columns={["ID","Building","Room","Action"]}>
         {rooms.data.map((r: any) => (

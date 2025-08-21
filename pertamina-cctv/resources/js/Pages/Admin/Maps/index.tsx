@@ -15,7 +15,7 @@ export default function AdminMapsIndex({ buildings, filters }: any) {
           placeholder="Cari gedung..."
           onKeyDown={(e) => { if (e.key === 'Enter') router.visit(route('admin.maps.index', { q: (e.target as HTMLInputElement).value })); }}
         />
-        <Link href={route('admin.maps.create')} className="rounded bg-indigo-600 text-white px-3 py-2">Create Maps</Link>
+        <Link href={route('admin.maps.create')}><Button>Create Maps</Button></Link>
       </div>
       <Table columns={["ID","Name","Lat","Lng","Action"]}>
         {buildings.data.map((b: any) => (

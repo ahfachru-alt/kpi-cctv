@@ -15,7 +15,7 @@ export default function AdminContactIndex({ contacts, filters }: any) {
           placeholder="Cari kontak..."
           onKeyDown={(e) => { if (e.key === 'Enter') router.visit(route('admin.contact.index', { q: (e.target as HTMLInputElement).value })); }}
         />
-        <Link href={route('admin.contact.create')} className="rounded bg-indigo-600 text-white px-3 py-2">Create Contact</Link>
+        <Link href={route('admin.contact.create')}><Button>Create Contact</Button></Link>
       </div>
       <Table columns={["ID","Name","Email","Phone","WhatsApp","Action"]}>
         {contacts.data.map((c: any) => (

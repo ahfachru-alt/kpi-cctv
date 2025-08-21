@@ -4,6 +4,7 @@ import { Head, useForm, Link } from '@inertiajs/react';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import PrimaryButton from '@/Components/PrimaryButton';
+import { Button } from '@/Components/Admin/Button';
 
 type FormData = { name: string; ip: string; status: 'online'|'offline'|'maintenance'; building_id: number|string; room_id?: number|string; latitude?: number; longitude?: number };
 
@@ -62,8 +63,8 @@ export default function AdminCctvCreate({ buildings, rooms }: any) {
           </div>
         </div>
         <div className="pt-2 flex gap-2">
-          <Link href={route('admin.table.index')} className="rounded border px-4 py-2">Cancel</Link>
-          <PrimaryButton disabled={processing}>Save</PrimaryButton>
+          <Link href={route('admin.table.index')}><Button variant="secondary">Cancel</Button></Link>
+          <Button disabled={processing}>Save</Button>
         </div>
       </form>
     </AdminLayout>
