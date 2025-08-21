@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { Link, usePage } from '@inertiajs/react';
 import ThemeSwitch from '@/Components/ThemeSwitch';
 import Flash from '@/Components/Flash';
+import Container from '@/Components/Container';
 
 export default function AdminLayout({ children }: PropsWithChildren) {
   return (
@@ -39,8 +40,10 @@ export default function AdminLayout({ children }: PropsWithChildren) {
         </nav>
       </aside>
       <main className="ml-64 p-6">
-        <Flash />
-        {children}
+        <Container>
+          <Flash />
+          {children}
+        </Container>
       </main>
     </div>
   );
