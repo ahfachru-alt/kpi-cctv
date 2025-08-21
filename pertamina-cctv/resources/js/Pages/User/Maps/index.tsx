@@ -23,6 +23,7 @@ function makeCircleIcon(color: string) {
 }
 
 import UserLayout from '@/Layouts/UserLayout';
+import { Button } from '@/Components/Admin/Button';
 
 export default function UserMaps() {
   const [buildings, setBuildings] = useState<Building[]>([]);
@@ -83,7 +84,7 @@ export default function UserMaps() {
                     <div className="space-y-1">
                       <div className="font-semibold">{cam.name}</div>
                       <div className="text-xs">Status: <span className="capitalize">{cam.status}</span></div>
-                      <a href={`/cctv/${cam.id}/live`} className="inline-flex items-center text-indigo-600 hover:underline text-sm">Live</a>
+                      <a href={`/cctv/${cam.id}/live`}><Button className="px-2 py-1 text-xs">Live</Button></a>
                     </div>
                   </Popup>
                 </Marker>
