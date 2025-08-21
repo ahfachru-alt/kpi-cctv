@@ -1,12 +1,13 @@
 import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
-import { Head, Link, router } from '@inertiajs/react';
+import { Head, Link, router, useForm } from '@inertiajs/react';
 import { Table } from '@/Components/Admin/Table';
 import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
 import DangerButton from '@/Components/DangerButton';
 
 export default function AdminCctvIndex({ cctvs, buildings, filters }: any) {
+  const { delete: destroy } = useForm();
   return (
     <AdminLayout>
       <Head title="CCTV Table" />
@@ -27,7 +28,7 @@ export default function AdminCctvIndex({ cctvs, buildings, filters }: any) {
             <td className="px-3 py-2">{c.room?.name}</td>
             <td className="px-3 py-2 text-right">
               <Link href={route('admin.table.edit', c.id)} className="mr-2"><SecondaryButton>Edit</SecondaryButton></Link>
-              <Link as="button" method="delete" href={route('admin.table.destroy', c.id)}><DangerButton>Delete</DangerButton></Link>
+              <DangerButton onClick={() => destroy(route('admin.table.destroy', c.id))}>Delete</DangerButton>
             </td>
           </tr>
         ))}
